@@ -1,0 +1,43 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    // 1、filter 判断相同元素个数
+    // let flag = false;
+    // if(nums.length < 2) return flag
+    // for(var i = 0; i<nums.length; i++){
+    //     const len = nums.filter(item=>item==nums[i]).length
+    //     if(len>1){
+    //         flag = true
+    //         return flag
+    //     }
+    // }
+    // return flag
+    // 2、Map 去重
+    // let flag = false;
+    // if(nums.length < 2) return flag
+    // const map = new Map()
+    // for(let i = 0;i<nums.length;i++){
+    //     if(map.has(nums[i])){
+    //         flag = true;
+    //         return flag
+    //     }else{
+    //         map.set(nums[i],1)
+    //     }
+    // }
+    // return flag
+    // 3、Set
+        let flag = false;
+    if(nums.length < 2) return flag
+    const set = new Set()
+    for(let i = 0;i<nums.length;i++){
+        if(set.has(nums[i])){
+            flag = true;
+            return flag
+        }else{
+            set.add(nums[i])
+        }
+    }
+    return flag
+};
